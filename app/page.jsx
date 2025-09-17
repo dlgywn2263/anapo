@@ -5,11 +5,6 @@ export default function Home() {
     <>
       <section className="container mx-auto">
         <Image className="h-screen" src={"/anapo_main.jpg"} alt={""} fill />
-        <div>
-          <article>
-            
-          </article>
-        </div>
       </section>
     </>
   );
