@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const StartOption = () => {
   return (
-    <div className="flex flex-row justify-center gap-8 s">
+    <div className="flex flex-row justify-center gap-8">
       <Link
         href="/main/findhospital"
         className="flex flex-col gap-2 items-center justify-center w-[350px] h-[350px]   rounded-2xl bg-[#B8D5FF] "
