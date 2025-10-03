@@ -1,17 +1,26 @@
 "use client";
 
-import { Activity, User, Mail, Lock, MoveLeft, Phone } from "lucide-react";
+import {
+  Activity,
+  User,
+  IdCardLanyard,
+  Lock,
+  MoveLeft,
+  Phone,
+} from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 const Page = () => {
-  const [email, setemail] = useState("");
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
   const [phone, setphone] = useState("");
   const [password, setPassword] = useState("");
+  const [ispasswd, setIsPasswd] = useState("");
   const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password, remember });
+    console.log({ IdCardLanyard, password, remember });
   };
   return (
     <section className="min-h-screen bg-gray-50 py-10">
@@ -38,23 +47,26 @@ const Page = () => {
               <div className="relative flex items-center">
                 <User className="absolute left-3  text-gray-400" size={20} />
                 <input
-                  type="email"
-                  placeholder="이메일을 입력하세요"
-                  value={email}
-                  onChange={(e) => setemail(e.target.value)}
+                  type="name"
+                  placeholder="이름을 입력하세요"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-[420px] bg-gray-100  rounded-lg pl-10 pr-3 p-2"
                 />
               </div>
 
-              {/* 이메일 */}
-              <div className="text-sm text-gray-900 mt-5">이메일 *</div>
+              {/* 아이디 */}
+              <div className="text-sm text-gray-900 mt-5">아이디 *</div>
               <div className="relative flex items-center">
-                <Mail className="absolute left-3  text-gray-400" size={20} />
+                <IdCardLanyard
+                  className="absolute left-3  text-gray-400"
+                  size={20}
+                />
                 <input
-                  type="email"
-                  placeholder="이메일을 입력하세요"
-                  value={email}
-                  onChange={(e) => setemail(e.target.value)}
+                  type="id"
+                  placeholder="아이디를 입력하세요"
+                  value={id}
+                  onChange={(e) => setId(e.target.value)}
                   className="w-[420px] bg-gray-100  rounded-lg pl-10 pr-3 p-2"
                 />
               </div>
@@ -81,8 +93,8 @@ const Page = () => {
                 <input
                   type="password"
                   placeholder="비밀번호를 다시 입력하세요"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={ispasswd}
+                  onChange={(e) => setIsPasswd(e.target.value)}
                   className="w-[420px] bg-gray-100  rounded-lg pl-10 pr-3 p-2"
                 />
               </div>

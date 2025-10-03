@@ -1,16 +1,24 @@
 "use client";
 
-import { Activity, Mail, Lock, MoveLeft } from "lucide-react";
+import { Activity, IdCardLanyard, Lock, MoveLeft } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 const Page = () => {
-  const [email, setemail] = useState("");
+  const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password, remember });
+    console.log({ id, password, remember });
+
+    localStorage.setItem("token", 10);
+
+    console.log("로그인 성공:", { id, password, remember });
+
+    // 메인 페이지로 이동
+    router.push("/main");
   };
   return (
     <section className="min-h-screen bg-gray-50">
@@ -30,14 +38,17 @@ const Page = () => {
             <h1 className="text-2xl mt-5">로그인</h1>
 
             <form onSubmit={handleSubmit} className="mt-10 ">
-              <div className="text-sm text-gray-900 mb-1">이메일</div>
+              <div className="text-sm text-gray-900 mb-1">아이디</div>
               <div className="relative flex items-center">
-                <Mail className="absolute left-3  text-gray-400" size={20} />
+                <IdCardLanyard
+                  className="absolute left-3  text-gray-400"
+                  size={20}
+                />
                 <input
-                  type="email"
-                  placeholder="이메일을 입력하세요"
-                  value={email}
-                  onChange={(e) => setemail(e.target.value)}
+                  type="id"
+                  placeholder="아이디를 입력하세요"
+                  value={id}
+                  onChange={(e) => setId(e.target.value)}
                   className="w-[420px] bg-gray-100  rounded-lg pl-10 pr-3 p-2"
                 />
               </div>

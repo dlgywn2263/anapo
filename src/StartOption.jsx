@@ -1,9 +1,9 @@
 import { Hospital, MonitorCheck } from "lucide-react";
-
 import Link from "next/link";
-const button = () => {
+
+const StartOption = () => {
   return (
-    <div className="flex flex-row absolute justify-center gap-8 container mx-auto  py-50 ">
+    <div className="flex flex-row justify-center gap-8 ">
       <Link
         href="/main/findhospital"
         className="flex flex-col gap-2 items-center justify-center w-[350px] h-[350px]   rounded-2xl bg-[#B8D5FF] "
@@ -38,4 +38,4 @@ const button = () => {
   );
 };
 
-export default button;
+export default StartOption;
