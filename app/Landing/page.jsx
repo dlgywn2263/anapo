@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <section className="relative h-screen  w-screen flex items-center justify-center">
       <Image src={"/anapo_main.jpg"} alt={""} fill className="object-cover" />
-      <div className="relative z-10">
+      <div className="relative  z-10">
         <StartOption />
       </div>
     </section>
